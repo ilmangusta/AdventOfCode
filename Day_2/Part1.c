@@ -4,17 +4,11 @@
 #include <stdlib.h>
 
 int main(void) {
-  FILE* file1;
-  file1=fopen("input_day2.txt", "r");
-  char row[N]="";
-  char move[N]="";
-  int number;
-  int deep=0;
-  int horizontal=0;
-  while(1){
-    if (feof(file1)){
-      break;
-    }
+  FILE* file1=fopen("input_day2.txt", "r");
+  char row[N]="", move[N]="";
+  int number, deep=0, horizontal=0;
+  
+  while(!feof(file1)){
     fgets(row, N, file1);
     char *ptr=strtok(row, " "); //move
     strcpy(move,ptr); 
@@ -39,7 +33,7 @@ int main(void) {
     }
     strcpy(row," ");
   }
-  printf("Horizontal: %d\nDeep: %d\n", horizontal, deep);\
-  printf("Result: %d\n", horizontal*deep);
+  printf("Horizontal: %d\nDeep: %d\n", horizontal, deep);
+  printf("Result: %d\n", horizontal*deep); //Result
   return 0;
 }
