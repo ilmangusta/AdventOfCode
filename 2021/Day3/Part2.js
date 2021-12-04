@@ -34,7 +34,6 @@ function mostCommon(a,k){
     }
   }
   return mostCommon(arr,k+1);
-  return res;
 }
 
 function leastCommon(a,k){
@@ -42,7 +41,7 @@ function leastCommon(a,k){
     return a[0];
   }
   var cont0=0; cont1=0;
-  var arr=[], flag, res;
+  var arr=[], flag;
   for (var i=0; i<a.length; i++){
     if (a[i][k]==="0"){
       cont0++;
